@@ -12,4 +12,6 @@ body	{font-family:Calibri, Arial;
 		 font-size:14pt}
 		 
 img		{border-style:ridge;
-        Border-color:gray}	
+        Border-color:gray}
+
+a	{text-decoration:none}
