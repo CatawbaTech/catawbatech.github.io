@@ -16,6 +16,6 @@ img		{border-style:ridge;
 
 a	{text-decoration-line:none}
 
-a:visited.white {color:white;}
+a.white {color:white;}
 
-a:visited.black  {color:black;}
+a.black  {color:black;}
