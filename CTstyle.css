@@ -15,3 +15,7 @@ img		{border-style:ridge;
         Border-color:gray}
 
 a	{text-decoration-line:none}
+
+a:visited.white {color:white;}
+
+a:visited.black  {color:black;}
