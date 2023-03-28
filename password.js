@@ -8,7 +8,7 @@ function passWord(){
 	if(passInput.value.match(pass)) {
 		passText.classList.remove("invalid")
 		passText.classList.add("valid")
-		window.location.href="ctechgames.html"
+		window.location.href="./games/ctechgames.html"
 	} 
 	else {
 		passText.classList.remove("valid")
