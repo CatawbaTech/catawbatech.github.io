@@ -1,0 +1,15 @@
+img.sml {text-decoration:none;}
+
+div#poop a img.lrg {height:0; width:0; border-width:0;}
+
+div#poop a:hover img.lrg {position:absolute; top:220px; left: 170px; height:300px; width:500px;}
+
+p	{font-family:Arial; color:white;}
+
+a	{color:orange; font-family:Verdana;}
+
+h1 {text-align: center; color:#FF9300; font-family:Verdana;}
+
+h3 {text-align: center; color:#FFD277; font-family:arial;}
+
+body 	{background-color:#443658;}
