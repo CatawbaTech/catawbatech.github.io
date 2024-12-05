@@ -1,0 +1,128 @@
+<!-- Toy Ski Ultimate / Author: Titus / 12/3/2024 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Toy Ski Ultimate</title>
+    <link rel="stylesheet" href="styles.css" />
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div id="presentScreen">
+      <div id="ribbon_top" class="ribbon"></div>
+      <div id="ribbon_bottom" class="ribbon"></div>
+      <div id="ribbon_left" class="ribbon"></div>
+      <div id="ribbon_right" class="ribbon"></div>
+    </div>
+    <div id="deathScreen">
+      <div class="middle">
+        <div style="display: inline-block; border: 2px purple">
+          <h1 align="center" id="deathMessage">That hurt!</h1>
+          <br />
+          <span id="finalScore">Final Score: 0</span>
+          <br /><br />
+          <button onclick="location.reload()">Play again?</button><br>
+		  <a href="https://www.christianity.com/wiki/holidays/the-christmas-bible-story-nativity-of-jesus-in-scripture.html" target="_blank">The Christmas Story</a><br>
+          <br /><br />
+
+          <span style="color: navy;font-weight:bold">Christmas Countdown:<br /></span>
+          <span id="daycounter"
+            >-- days, -- hours, -- minutes, and -- seconds</span
+          >
+          <br /><br />
+          
+        </div>
+      </div>
+    </div>
+    <div id="healthbar">🌲🌲🌲🌲</div>
+    <div id="frostpane"></div>
+    <div id="tutorialPane" onclick="closeTutorial()">
+      <h3>Santa needs your help!</h3>
+      <span
+        >Thousands of presents have fallen out of his sleigh! Can you collect
+        them before it's too late?</span
+      >
+      <br /><br />
+      <span>Click in the direction you want to move.</span> <br />
+      <span>Or, use your A/D keys.</span>
+      <br />
+      <span>Good luck!</span><br /><br /><span style="font-size: 11px"
+        >Click to dismiss</span
+      >
+    </div>
+    <div id="characterCustomizer">
+      <br />
+      <div class="flexbox">
+        <a href="#" onclick="changeCharacter(-1)">◀</a>
+        <a href="#" onclick="changeCharacter(-1)">
+          <img src="images/elf.png" height="48" width="32" id="leftCharacter" />
+        </a>
+        <img
+          src="images/nutcracker.png"
+          height="64"
+          width="48"
+          id="centerCharacter"
+        />
+        <a href="#" onclick="changeCharacter(1)">
+          <img
+            src="images/rudolph.png"
+            height="48"
+            width="32"
+            id="rightCharacter"
+          />
+        </a>
+        <a href="#" onclick="changeCharacter(1)">▶</a>
+      </div>
+      <div id="characterStats">
+        <span id="characterName">Snowman</span>
+        <br />
+        <div class="flexbox">
+          <table>
+            <tr>
+              <td>
+                <span> Health: </span>
+              </td>
+              <td>
+                <span id="health">🌲🌲🌲</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span> Agility: </span>
+              </td>
+              <td>
+                <span id="agility">🔄🔄🔄</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span> Special: </span>
+              </td>
+              <td>
+                <span id="special">Coming soon!</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <br />
+        <button onclick="changeGamemode()" class="option" id="gamemodebutton">
+          Normal
+        </button>
+        <br />
+        <button onclick="startGame()">Hit the slopes!</button>
+        <br />
+		<span style="font-size: 12;">Titus Ramsarran, 11th Grade</span><br>
+        <a
+          href="#"
+          onclick="showTutorial()"
+          style="float: left; color: white; text-decoration: underline"
+          >Show tutorial</a
+        >
+      </div>
+    </div>
+    <script src="scripts/script.js" type="module"></script>
+  </body>
+</html>

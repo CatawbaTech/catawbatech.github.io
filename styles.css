@@ -1,0 +1,290 @@
+/*
+Stylesheet for Toy Ski Ultimate
+Author: Titus
+12/3/2024
+*/
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Comic Sans MS", cursive, Verdana, sans-serif;
+  color: white;
+}
+#deathScreen {
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: rgba(100, 100, 100, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 2s;
+  pointer-events: none;
+}
+#presentScreen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 4;
+  background-image: url("images/snowflake_pattern.png");
+  background-color: rgba(255, 255, 240, 1);
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-delay: 1.25s;
+  animation-fill-mode: forwards;
+  transform-origin: bottom;
+}
+.ribbon {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  display: block;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+#ribbon_top {
+  background-image: url("images/ribbon_bow_top.png");
+  animation-name: slide-up;
+  animation-delay: 1s;
+}
+#ribbon_bottom {
+  background-image: url("images/ribbon_bow_bottom.png");
+  animation-name: slide-down;
+  animation-delay: 1s;
+}
+#ribbon_left {
+  background-image: url("images/ribbon_bow_left.png");
+  animation-name: slide-left;
+  animation-delay: 0.5s;
+}
+#ribbon_right {
+  background-image: url("images/ribbon_bow_right.png");
+  animation-name: slide-right;
+  animation-delay: 0.5s;
+}
+@keyframes slide-right {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: 200%;
+    opacity: 0;
+  }
+}
+@keyframes slide-left {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: -200%;
+    opacity: 0;
+  }
+}
+@keyframes slide-up {
+  0%: {
+    top: 0;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    top: -200%;
+  }
+}
+@keyframes slide-down {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: 200%;
+    opacity: 0;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+    backdrop-filter: blur(0px);
+  }
+  50% {
+    opacity: 0;
+    top: 0;
+    backdrop-filter: blur(15px);
+  }
+  100% {
+    top: 200%;
+    opacity: 0;
+  }
+}
+.middle {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.middle a,
+.middle a:visited {
+  color: white;
+  transition: 0.1s;
+}
+.middle a:hover {
+  color: darkgreen;
+}
+canvas {
+  z-index: 1;
+}
+#healthbar {
+  display: block;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  font-size: 3em;
+  z-index: 3;
+  pointer-events: none;
+}
+#frostpane {
+  height: 0;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-image: url("images/frost_background.png");
+  background-size: 100% 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+#tutorialPane {
+  display: block; /* block */
+  position: absolute;
+  left: calc(50% - 205px);
+  top: 90px;
+  height: 250px;
+  width: 410px;
+  background-color: rgba(50, 70, 63, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  text-align: center;
+  margin: 4px 4px;
+  padding: 4px;
+  z-index: 3;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+#characterCustomizer {
+  position: absolute;
+  z-index: 2;
+  height: 0; /* 300 px */
+  opacity: 0;
+  width: 400px;
+  display: block;
+  left: calc(50% - 200px);
+  top: 100px;
+  font-size: 18px;
+  background-color: rgba(0, 20, 13, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+  padding: 8px;
+  transition: opacity 1s;
+  overflow: hidden;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#characterCustomizer a {
+  color: steelblue;
+  text-decoration: none;
+  transition: 0.1s;
+  padding: 4px;
+}
+
+#characterCustomizer a:hover {
+  color: rgb(175, 224, 232);
+}
+
+#rightCharacter,
+#leftCharacter {
+  opacity: 0.7;
+}
+
+#rightCharacter,
+#leftCharacter,
+#centerCharacter {
+  transition: 0.2s;
+}
+
+#rightCharacter:hover,
+#leftCharacter:hover {
+  opacity: 1;
+}
+
+#characterName {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#characterStats {
+  width: 400px;
+  text-align: center;
+  font-size: 12px;
+}
+
+button, .button_a {
+  border: none;
+  border-radius: 2px;
+  padding: 6px;
+  font-size: 18px;
+  background-color: steelblue;
+  color: white;
+  box-shadow: 1px 2px 0 rgba(100, 100, 100, 0.8);
+  transition: 0.2s;
+  margin: 4px;
+}
+
+.button_a {
+	display: block;
+	width: 300px;
+}
+
+.option {
+  font-size: 15px;
+  background-color: darkgreen;
+}
+
+.option:hover {
+  background-color: forestgreen;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(175, 224, 232);
+  color: gray;
+  box-shadow: none;
+}
